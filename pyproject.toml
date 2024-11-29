@@ -6,16 +6,21 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "gensim>=4.3.2",
+    "imblearn>=0.0",
     "ipykernel>=6.29.5",
+    "matplotlib>=3.9.2",
     "nltk>=3.9.1",
     "numba>=0.60.0",
     "numpy>=2.0.2",
     "pandas>=2.2.3",
     "pip>=24.3.1",
     "pyarrow>=18.0.0",
+    "scikit-learn>=1.5.2",
     "seaborn>=0.13.2",
     "spacy>=3.8.2",
     "textblob>=0.18.0.post0",
     "transformers>=4.46.2",
     "uv>=0.5.2",
+    "wandb>=0.18.7",
+    "xgboost>=2.1.3",
 ]
