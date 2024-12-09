@@ -1,0 +1,43 @@
+name: Run Notebook and Save Results
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        lfs: true # Ensure Git LFS files are pulled
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas scikit-learn notebook
+
+    - name: Run notebook
+      run: |
+        python -m pip install nbconvert
+        jupyter nbconvert --to notebook --execute your_notebook.ipynb --output processed_notebook.ipynb
+
+    - name: Archive results
+      run: |
+        mkdir -p results
+        mv processed_file.csv results/
+        echo "Results saved to 'results/' directory"
+      
+    - name: Upload results
+      uses: actions/upload-artifact@v3
+      with:
+        name: processed-results
+        path: results/
