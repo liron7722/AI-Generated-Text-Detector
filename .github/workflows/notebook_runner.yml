@@ -5,6 +5,7 @@ on:
     branches:
       - main
     workflow_dispatch:
+      - Production
 
 jobs:
   run-notebook:
