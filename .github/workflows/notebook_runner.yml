@@ -27,7 +27,7 @@ jobs:
     - name: Run notebook
       run: |
         python -m pip install nbconvert
-        jupyter nbconvert --to notebook --execute your_notebook.ipynb --output processed_notebook.ipynb
+        jupyter nbconvert --to notebook --execute tfidf.ipynb --output processed_notebook.ipynb
 
     - name: Archive results
       run: |
