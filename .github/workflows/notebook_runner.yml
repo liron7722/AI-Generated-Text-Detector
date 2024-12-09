@@ -24,6 +24,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install pandas scikit-learn notebook pyarrow
 
+    - name: Download file
+      run: curl -o data.csv -L "https://ucb2f599a76d65028cab91bb63c7.dl.dropboxusercontent.com/cd/0/get/Cf9K9mBNI2qEZG9eY-9Jo2M-dMbygFGTB7GJQYO3WSZw9zd6EuID6PFLpvlfpXb7ISvLbw_-aY24kuMS5HA7f_rOL6vfI1FEvMYUnskgfEN2WVBHCvhXFw1EcHCGEWKpUbkuUNdT3HY-HHC_sdSwmUXgWcKl5pTJMjUPnJOC_UNOyw/file?_download_id=80788242182069391958747162287102299801051781169270395785306917662&_log_download_success=1#"
+
     - name: Run notebook
       run: |
         python -m pip install nbconvert
