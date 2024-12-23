@@ -53,8 +53,7 @@ jobs:
           --to notebook \
           --execute tdIdf.ipynb \
           --output processed_notebook.ipynb \
-          --ExecutePreprocessor.kernel_name=python3 \
-          --ExecutePreprocessor.arguments="--feature=${{ github.event.inputs.feature }} --minGrams=${{ github.event.inputs.minGrams }} --maxGrams=${{ github.event.inputs.maxGrams }}"
+          --ExecutePreprocessor.extra_arguments="--feature=${{ github.event.inputs.feature }} --minGrams=${{ github.event.inputs.minGrams }} --maxFeatures=${{ github.event.inputs.maxFeatures }} --maxGrams=${{ github.event.inputs.maxGrams }}"
 
     - name: Archive results
       run: |
