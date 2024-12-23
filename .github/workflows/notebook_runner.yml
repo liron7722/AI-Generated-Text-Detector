@@ -46,6 +46,13 @@ jobs:
       run: |
         curl -o data.csv -L "${{ github.event.inputs.file_url }}"
 
+    - name: Set environment variables
+      run: |
+        echo "FEATURE=${{ github.event.inputs.feature }}" >> $GITHUB_ENV
+        echo "MIN_GRAMS=${{ github.event.inputs.minGrams }}" >> $GITHUB_ENV
+        echo "MAX_GRAMS=${{ github.event.inputs.maxGrams }}" >> $GITHUB_ENV
+        echo "maxFeatures=${{ github.event.inputs.maxFeatures }}" >> $GITHUB_ENV
+
     - name: Run notebook
       run: |
         python -m pip install nbconvert
@@ -53,7 +60,6 @@ jobs:
           --to notebook \
           --execute tdIdf.ipynb \
           --output processed_notebook.ipynb \
-          --ExecutePreprocessor.extra_arguments="--feature=${{ github.event.inputs.feature }} --minGrams=${{ github.event.inputs.minGrams }} --maxFeatures=${{ github.event.inputs.maxFeatures }} --maxGrams=${{ github.event.inputs.maxGrams }}"
 
     - name: Archive results
       run: |
