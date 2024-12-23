@@ -14,11 +14,15 @@ on:
       minGrams:
         description: "Minimum n-gram size"
         required: true
-        default: 1
+        default: 2
       maxGrams:
         description: "Maximum n-gram size"
         required: true
-        default: 2
+        default: 4
+      maxFeatures:
+        description: "Maximum feature size"
+        required: true
+        default: 250
 
 jobs:
   run-notebook:
