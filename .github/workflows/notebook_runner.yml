@@ -8,7 +8,7 @@ on:
         required: true
         default: "https://example.com/file.csv"
       feature:
-        description: "Feature to use (options: tdidf, bow)"
+        description: "Feature to use (options: tdidf, bow, bert)"
         required: true
         default: "tdidf"
       minGrams:
