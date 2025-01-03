@@ -52,8 +52,8 @@ jobs:
         echo "MIN_GRAMS=${{ github.event.inputs.minGrams }}" >> $GITHUB_ENV
         echo "MAX_GRAMS=${{ github.event.inputs.maxGrams }}" >> $GITHUB_ENV
         echo "maxFeatures=${{ github.event.inputs.maxFeatures }}" >> $GITHUB_ENV
-        env:
-          WANDB_KEY: ${{ secrets.WANDB_KEY }}
+      env:
+        WANDB_KEY: ${{ secrets.WANDB_KEY }}
 
     - name: Run notebook
       run: |
