@@ -40,7 +40,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pandas scikit-learn notebook transformers datasets wandb 
+        pip install pandas scikit-learn notebook transformers datasets wandb gensim
         pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
         pip install transformers[torch]
 
